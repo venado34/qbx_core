@@ -165,8 +165,129 @@ return {
             ['11'] = { name = 'Chief', isboss = true, payment = 600, type = 'ambulance' },
         },
     },
-    ---whitelisted jobs
-    ---
+    -- subdivisions and extra jobs
+    ['lspd_mciu'] = {
+        label = 'LSPD MCIU',
+        type = 'leo',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Investigator', payment = 150, type = 'lspd_mciu' },
+        },
+    },
+    ['lcso_cid'] = {
+        label = 'LCSO CID',
+        type = 'leo',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Detective', payment = 150, type = 'lcso_cid' },
+        },
+    },
+    ['lcso_esu'] = {
+        label = 'LCSO ESU',
+        type = 'leo',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Operator', payment = 150, type = 'lcso_esu' },
+        },
+    },
+    ['sahp_cve'] = {
+        label = 'SAHP CVE',
+        type = 'leo',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Trooper', payment = 150, type = 'sahp_cve' },
+        },
+    },
+    ['sahp_thi'] = {
+        label = 'SAHP THI',
+        type = 'leo',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Investigator', payment = 150, type = 'sahp_thi' },
+        },
+    },
+    ['pbpd_pvu'] = {
+        label = 'PBPD PVU',
+        type = 'leo',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Officer', payment = 150, type = 'pbpd_pvu' },
+        },
+    },
+    ['pbpd_wildlife'] = {
+        label = 'PBPD Wildlife',
+        type = 'leo',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Ranger', payment = 150, type = 'pbpd_wildlife' },
+        },
+    },
+    ['coroner'] = {
+        label = 'Coroner',
+        type = 'ems',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Medical Examiner', payment = 100, type = 'coroner' },
+        },
+    },
+    ['sadot'] = {
+        label = 'San Andreas DOT',
+        type = 'civ',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Worker', payment = 75, type = 'sadot' },
+        },
+    },
+    ['parking_patrol'] = {
+        label = 'Parking Patrol',
+        type = 'leo',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Officer', payment = 50, type = 'parking_patrol' },
+        },
+    },
+    ['volunteer_fire'] = {
+        label = 'Volunteer Fire Dept.',
+        type = 'fire',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Volunteer', payment = 25, type = 'volunteer_fire' },
+        },
+    },
+    ['weazel_news'] = {
+        label = 'Weazel News',
+        type = 'civ',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Reporter', payment = 75, type = 'weazel_news' },
+        },
+    },
+    ['scene_event_certified'] = {
+        label = 'Scene/Event Certified',
+        type = 'civ',
+        defaultDuty = false,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Trainee', payment = 100, type = 'scene_event_certified' },
+            [1] = { name = 'Scene I', payment = 50, type = 'scene_event_certified' },
+            [2] = { name = 'Scene II', payment = 75, type = 'scene_event_certified' },
+            [3] = { name = 'Trainer', payment = 100, type = 'scene_event_certified' },
+            [4] = { name = 'Head', payment = 125, type = 'scene_event_certified' },
+        },
+    },
+    ---whitelisted jobs ---
 
     ['realestate'] = {
         label = 'Real Estate',

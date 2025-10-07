@@ -1501,3 +1501,34 @@ function GenerateUniqueIdentifier(type)
 end
 
 exports('GenerateUniqueIdentifier', GenerateUniqueIdentifier)
+
+---Sets the active job for a player when they have multiple jobs
+function Player.Functions.SetActiveJob(jobName)
+    local hasJob = false
+    local jobIndex = -1
+    for i, job in ipairs(self.PlayerData.jobs) do
+        if job.name == jobName then
+            hasJob = true
+            jobIndex = i
+            break
+        end
+    end
+
+    if not hasJob then
+        print(('[qbx_core] Player %s (%s) tried to set an active job they do not have: %s'):format(self.PlayerData.name, self.PlayerData.source, jobName))
+        return
+    end
+
+    -- Swap the job to the first position in the table to make it active
+    local activeJob = table.remove(self.PlayerData.jobs, jobIndex)
+    table.insert(self.PlayerData.jobs, 1, activeJob)
+
+    -- Update the main PlayerData.job to reflect the new active job
+    self.PlayerData.job = self.PlayerData.jobs[1]
+    
+    -- Trigger client-side updates
+    self.Functions.UpdatePlayerData()
+    TriggerClientEvent('QBCore:Client:SetJob', self.PlayerData.source, self.PlayerData.job)
+    TriggerClientEvent('QBCore:Notify', self.PlayerData.source, ('Your active job is now %s'):format(self.PlayerData.job.label))
+    print(('[qbx_core] Player %s (%s) set active job to: %s'):format(self.PlayerData.name, self.PlayerData.source, jobName))
+end
